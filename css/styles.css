@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+.currnet-time, .total-time{
+    padding-top: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+.buttons{
+    padding-top: 50px;
+    text-align: center;
+}
+.buttons div{
+    display: inline-block;
+    cursor: pointer;
+    background-image: url('../img/buttons.png');
+    width: 79px;
+    height: 76px;
+    background-size: 350px;
+    margin: 0px 20px;
+}
+.buttons .btn-start{
+    background-position: -272px 0;
+}
+.buttons .btn-pause{
+    background-position: -140px 0;
+}
+.buttons .btn-stop{
+    background-position: 0 0;
+}
+.buttons .disabled{
+    opacity: 0.5;
+    cursor: auto;
+}

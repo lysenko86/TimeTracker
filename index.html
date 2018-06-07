@@ -1,18 +1,20 @@
+<!DOCTYPE html>
 <html>
 <head>
-<script src="jquery-3.3.1.min.js"></script>
-<script src="script.js"></script>
-<style>
-body{ font-size: 20px; }
-</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="css/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <title>TimeTracker</title>
 </head>
 <body>
-<div class="currnet-time">Current time: <span></span></div>
-<div class="buttons">
-<button class="btn-start">Start</button>
-<button class="btn-stop">Stop</button>
-<button class="btn-reset">Reset</button>
-</div>
-<div class="total-time">Total time: <span></span></div>
+    <div class="currnet-time">Current time: <span></span></div>
+    <div class="buttons">
+        <div class="btn-start"></div>
+        <div class="btn-pause disabled"></div>
+        <div class="btn-stop disabled"></div>
+    </div>
+    <div class="total-time">Total time: <span></span></div>
 </body>
 </html>

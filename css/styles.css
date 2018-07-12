@@ -9,6 +9,16 @@ body{
     font-size: 50px;
     font-weight: bold;
 }
+.total-time span{
+    cursor: pointer;
+}
+.total-time input{
+    display: none;
+    width: 200px;
+    border: 3px solid #000;
+    font-size: 50px;
+    font-weight: bold;
+}
 .buttons{
     padding-top: 50px;
     text-align: center;

@@ -15,6 +15,7 @@ $(function(){
     let btnStopActive = false;
     getTime();
     $('.total-time span').text('00:00:00');
+
     setInterval(function(){
         getTime();
         if (counterOn){
@@ -28,6 +29,7 @@ $(function(){
             $('.total-time span').text(hours + ':' + minutes + ':' + seconds);
         }
     }, 1000);
+
     $('.btn-start').click(function(){
         if ($(this).hasClass('disabled')){
             return false;
@@ -37,6 +39,7 @@ $(function(){
         $('.btn-start').addClass('disabled');
         $('.btn-pause, .btn-stop').removeClass('disabled');
     });
+
     $('.btn-pause').click(function(){
         if ($(this).hasClass('disabled')){
             return false;
@@ -45,13 +48,35 @@ $(function(){
         $('.btn-pause').addClass('disabled');
         $('.btn-start, .btn-stop').removeClass('disabled');
     });
+
     $('.btn-stop').click(function(){
         if ($(this).hasClass('disabled')){
             return false;
         }
         counterOn = false;
         totalTime = 0;
+        $('.total-time span').text('00:00:00');
         $('.btn-pause, .btn-stop').addClass('disabled');
         $('.btn-start').removeClass('disabled');
+    });
+
+    $('.total-time span').click(function(){
+        $(this).hide();
+        $(this).siblings('input').val($(this).text()).show().focus();
+    });
+
+    $('.total-time input').keydown(function(e){
+        if (e.keyCode === 13){
+            const time = $(this).val();
+            $(this).siblings('span').text(time).show();
+            $(this).hide().val('');
+            const hours = parseInt(time.substr(0, 2));
+            const minutes = parseInt(time.substr(3, 2));
+            const seconds = parseInt(time.substr(6, 2));
+            totalTime = hours * 60 * 60 + minutes * 60 + seconds;
+        } else if (e.keyCode === 27) {
+            $(this).siblings('span').show();
+            $(this).hide().val('');
+        }
     });
 });
